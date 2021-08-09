@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.asugar</groupId>
     <artifactId>Employment-Manage</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>Employment-Manage</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -47,6 +47,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.3.3</version>
         </dependency>
     </dependencies>
 

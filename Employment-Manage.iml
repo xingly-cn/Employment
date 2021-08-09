@@ -96,5 +96,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.2" level="project" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.3.3" level="project" />
   </component>
 </module>
