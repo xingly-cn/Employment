@@ -10,4 +10,5 @@ spring:
     username: root
     password: XNXxnx520@
 
-
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
