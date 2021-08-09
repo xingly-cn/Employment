@@ -4,7 +4,7 @@ package com.asugar.employmentmanage.common;
  */
 public enum ResultCode {
 
-    SUCCESS(200, "成功"),
+    SUCCESS(0, "成功"),
     FAILURE(500,"失败");
 
     private long code;

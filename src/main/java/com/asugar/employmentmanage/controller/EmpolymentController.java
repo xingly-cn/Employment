@@ -27,8 +27,8 @@ public class EmpolymentController {
     // 查询所有学生
     @ResponseBody
     @RequestMapping("/employment/getallinfo")
-    public BackResult getAllInfo(Employment employmentInfo, @RequestParam("limit") int pageSize, @RequestParam("page") int pageNum){
-        List<Employment> infoList = employmentMapper.getAllEmploymentInfo(employmentInfo, pageNum, pageSize);
+    public BackResult getAllInfo( @RequestParam("limit") int pageSize, @RequestParam("page") int pageNum){
+        List<Employment> infoList = employmentMapper.getAllEmploymentInfo(pageNum, pageSize);
         return new BackResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), infoList.size(),infoList);
     }
 

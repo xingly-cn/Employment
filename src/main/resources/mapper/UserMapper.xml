@@ -12,18 +12,6 @@
     <select id="getAllUsers" resultMap="userResultMap" parameterType="com.asugar.employmentmanage.entity.User">
         select user_id, user_name, user_pwd, user_account, user_type from user
         where 1=1
-        <if test="userId != null and userId != ''">
-            and user_id = #{userId}
-        </if>
-        <if test="userName != null and userName != ''">
-            and user_name like '%${userName}'
-        </if>
-        <if test="userAccount != null and userAccount != ''">
-            and user_account like '%${userAccount}'
-        </if>
-        <if test="userType != null and userType != ''">
-            and user_type = #{user_type}
-        </if>
     </select>
 
     <select id="getUserById" resultMap="userResultMap">

@@ -10,8 +10,6 @@ import java.util.Date;
  * 实体类：学生
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Employment {
     private String informationId;
     private String companyName;

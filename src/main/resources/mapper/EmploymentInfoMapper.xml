@@ -29,24 +29,6 @@
             student_major, student_class, student_gender, student_mobile, company_contact_name, company_contact_mobile, employment_time
         from employment_info
         where 1=1
-        <if test="informationId != null and informationId != ''">
-             and information_id = #{informationId}
-        </if>
-        <if test="studentMajor != null and studentMajor != ''">
-            and student_major like '%${studentMajor}%'
-        </if>
-        <if test="studentClass != null and studentClass != ''">
-            and student_class like '%${studentClass}%'
-        </if>
-        <if test="studentGender != null and studentGender != ''">
-            and student_gender = #{studentGender}
-        </if>
-        <if test="companyName != null and companyName != ''">
-            and company_name like '%${companyName}%'
-        </if>
-        <if test="employmentStation != null and employmentStation != ''">
-            and employment_station like '%${employmentStation}%'
-        </if>
         order by employment_time
     </select>
 
