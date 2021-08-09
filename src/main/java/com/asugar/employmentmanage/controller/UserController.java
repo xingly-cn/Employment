@@ -24,18 +24,18 @@ public class UserController {
     public String index(){
         return "system/usermanage/usermanage";
     }
-    // 获取所有管理员信息
+    // 查询管理员是否存在
     @RequestMapping("/employment/getallusers")
     public BackResult getAllUsers(User user, @RequestParam("limit") int pageSize, @RequestParam("page") int pageNum){
         List<User> result = userMapper.getAllUsers(user, pageNum, pageSize);
         return new BackResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), result.size(),result);
     }
-
+    // 查询管理员信息
     @RequestMapping("/employment/getuserbyaccount/{userAccount}")
     public BackResult getUserByAccount(@PathVariable("userAccount") String userAccount){
         return new BackResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), 1,userMapper.getUserByAccount(userAccount));
     }
-
+    // 添加管理员
     @RequestMapping("/employment/adduser")
     public BackResult addUser(User user){
         user.setUserId(UUID.randomUUID().toString());
@@ -43,13 +43,13 @@ public class UserController {
         userMapper.addUser(user);
         return new BackResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), 1,1);
     }
-
+    // 更新管理员
     @RequestMapping("/employment/updateuser")
     public BackResult updateUser(User user){
         userMapper.updateUser(user);
         return new BackResult(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), 1,1);
     }
-
+    // 删除管理员
     @RequestMapping("/employment/deluser/{userId}")
     public BackResult delInfo(@PathVariable("userId") String userId){
         userMapper.deleteUser(userId);

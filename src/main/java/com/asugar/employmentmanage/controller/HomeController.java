@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
     @Autowired
     UserMapper userMapper;
-
+    // 首页
     @RequestMapping({"/","/employment"})
     public String index(){
         return "system/login";
     }
-
+    // 登陆控制
     @RequestMapping("/employment/login")
     public BackResult login(User user){
         user.setUserPwd(MD5Util.getMD5(user.getUserPwd()));
