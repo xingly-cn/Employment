@@ -4,6 +4,7 @@ import com.asugar.employmentmanage.common.BackResult;
 import com.asugar.employmentmanage.common.ResultCode;
 import com.asugar.employmentmanage.mapper.EmploymentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
 /**
  * 根据不同类型统计
  */
-@RestController
+@Controller
 public class EmploymentStatisticController {
 
     @Autowired
@@ -23,6 +24,7 @@ public class EmploymentStatisticController {
     }
 
     // 根据不同类型统计
+    @ResponseBody
     @RequestMapping("/employment/statistic/{fieldName}")
     public BackResult getStatisticData(@PathVariable("fieldName") String fieldName,
                                        @RequestParam("limit") int pageSize, @RequestParam("page") int pageNum){

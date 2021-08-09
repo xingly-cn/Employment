@@ -6,6 +6,7 @@ import com.asugar.employmentmanage.entity.User;
 import com.asugar.employmentmanage.mapper.UserMapper;
 import com.asugar.employmentmanage.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 首页控制和登陆控制
  */
-@RestController
+@Controller
 public class HomeController {
     @Autowired
     UserMapper userMapper;
@@ -23,6 +24,7 @@ public class HomeController {
         return "system/login";
     }
     // 登陆控制
+    @ResponseBody
     @RequestMapping("/employment/login")
     public BackResult login(User user){
         user.setUserPwd(MD5Util.getMD5(user.getUserPwd()));
