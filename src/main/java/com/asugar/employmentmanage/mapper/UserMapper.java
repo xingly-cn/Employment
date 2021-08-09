@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Repository
 public interface UserMapper {
-    List<User> getAllUsers(User user);
+    List<User> getAllUsers(User user, int pageNum, int pageSize);
     User getUserById(String userId);
     User getUserByAccount(String userAccount);
     int addUser(User user);
